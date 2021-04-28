@@ -1687,7 +1687,7 @@ EXTERN int	km_startsel INIT(= FALSE);
 EXTERN int	cmdwin_type INIT(= 0);	// type of cmdline window or 0
 EXTERN int	cmdwin_result INIT(= 0); // result of cmdline window or 0
 
-EXTERN char_u no_lines_msg[]	INIT(= N_("--No lines in buffer--"));
+EXTERN char_u no_lines_msg[]	INIT(= N_("-- No lines in buffer. --"));
 
 EXTERN char typename_unknown[]	INIT(= N_("unknown"));
 EXTERN char typename_int[]	INIT(= N_("int"));
@@ -1894,13 +1894,13 @@ EXTERN int netbeansSuppressNoLines INIT(= 0); // skip "No lines in buffer"
 /*
  * Some messages that can be shared are included here.
  */
-EXTERN char top_bot_msg[]   INIT(= N_("search hit TOP, continuing at BOTTOM"));
-EXTERN char bot_top_msg[]   INIT(= N_("search hit BOTTOM, continuing at TOP"));
+EXTERN char top_bot_msg[]   INIT(= N_("Search hit TOP, continuing at BOTTOM."));
+EXTERN char bot_top_msg[]   INIT(= N_("Search hit BOTTOM, continuing at TOP."));
 
 EXTERN char line_msg[]	    INIT(= N_(" line "));
 
 #ifdef FEAT_CRYPT
-EXTERN char need_key_msg[]  INIT(= N_("Need encryption key for \"%s\""));
+EXTERN char need_key_msg[]  INIT(= N_("Need encryption key for \"%s\"."));
 #endif
 
 /*
