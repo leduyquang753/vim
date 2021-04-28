@@ -89,6 +89,7 @@
 #endif
 #define PV_INF		OPT_BUF(BV_INF)
 #define PV_ISK		OPT_BUF(BV_ISK)
+#define PV_KAI		OPT_BUF(BV_KAI)
 #ifdef FEAT_CRYPT
 # define PV_KEY		OPT_BUF(BV_KEY)
 #endif
@@ -906,6 +907,9 @@ static struct vimoption options[] =
     {"eventignore", "ei",   P_STRING|P_VI_DEF|P_ONECOMMA|P_NODUP,
 			    (char_u *)&p_ei, PV_NONE, did_set_eventignore,
 			    {(char_u *)"", (char_u *)0L} SCTX_INIT},
+    {"expandendofline",   "eeol",   P_BOOL|P_VI_DEF|P_VIM,
+			    (char_u *)&p_eeol, PV_NONE,
+			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
     {"expandtab",   "et",   P_BOOL|P_VI_DEF|P_VIM,
 			    (char_u *)&p_et, PV_ET, NULL,
 			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
@@ -1459,6 +1463,9 @@ static struct vimoption options[] =
     {"joinspaces",  "js",   P_BOOL|P_VI_DEF|P_VIM,
 			    (char_u *)&p_js, PV_NONE, NULL,
 			    {(char_u *)TRUE, (char_u *)0L} SCTX_INIT},
+    {"keepautoindent",   "kai",  P_BOOL|P_VIM,
+			    (char_u *)&p_kai, PV_KAI,
+			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
     {"key",	    NULL,   P_STRING|P_ALLOCED|P_VI_DEF|P_NO_MKRC,
 #ifdef FEAT_CRYPT
 			    (char_u *)&p_key, PV_KEY, did_set_cryptkey,
@@ -1800,6 +1807,12 @@ static struct vimoption options[] =
 			    SCTX_INIT},
     {"open",	    NULL,   P_BOOL|P_VI_DEF,
 			    (char_u *)NULL, PV_NONE, NULL,
+			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
+    {"opencopy",    "oc",   P_BOOL|P_VI_DEF,
+			    (char_u *)&p_oc, PV_NONE,
+			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
+    {"opencopy",    "oc",   P_BOOL|P_VI_DEF,
+			    (char_u *)&p_oc, PV_NONE,
 			    {(char_u *)FALSE, (char_u *)0L} SCTX_INIT},
     {"opendevice",  "odev", P_BOOL|P_VI_DEF,
 #if defined(MSWIN)

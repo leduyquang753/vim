@@ -36,7 +36,7 @@ static void cmdline_search_stat(int dirc, pos_T *pos, pos_T *cursor_pos, int sho
 static void update_search_stat(int dirc, pos_T *pos, pos_T *cursor_pos, searchstat_T *stat, int recompute, int maxcount, long timeout);
 
 #define SEARCH_STAT_DEF_TIMEOUT 40L
-#define SEARCH_STAT_DEF_MAX_COUNT 99
+#define SEARCH_STAT_DEF_MAX_COUNT 999
 #define SEARCH_STAT_BUF_LEN 12
 
 /*

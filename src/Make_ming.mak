@@ -35,7 +35,8 @@
 #PYTHON=c:/python20
 
 # uncomment 'PYTHON3' if you want a python3-enabled version
-#PYTHON3=c:/python31
+PYTHON3="C:/Program files/Python311"
+PYTHON3_VER=311
 
 # uncomment 'TCL' if you want a Tcl-enabled version
 #TCL=c:/tcl

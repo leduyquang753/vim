@@ -5684,7 +5684,7 @@ mch_call_shell(
 #endif
 	    )
     {
-	smsg(_("shell returned %d"), x);
+	smsg(_("Shell returned %d."), x);
 	msg_putchar('\n');
     }
     resettitle();

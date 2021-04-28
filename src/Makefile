@@ -2054,7 +2054,7 @@ CCC = $(CCC_NF) $(ALL_CFLAGS)
 # Link the target for normal use or debugging.
 # A shell script is used to try linking without unnecessary libraries.
 $(VIMTARGET): auto/config.mk objects $(OBJ) version.c version.h
-	$(CCC) version.c -o objects/version.o
+	$(CCC) version.c "-DBUILD_DATE=\"$(BUILD_DATE)\"" "-DMODIFIED_BY=\"$(MODIFIED_BY)\"" -o objects/version.o
 	@$(BUILD_DATE_MSG)
 	@LINK="$(PURIFY) $(SHRPENV) $(CClink) $(ALL_LIB_DIRS) $(LDFLAGS) \
 		-o $(VIMTARGET) $(OBJ) $(ALL_LIBS)" \
