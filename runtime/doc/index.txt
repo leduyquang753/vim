@@ -209,6 +209,7 @@ tag		char	      note action in Normal mode	~
 |CTRL-F|	CTRL-F		1  scroll N screens Forward
 |CTRL-G|	CTRL-G		   display current file name and position
 |<BS>|		<BS>		1  same as "h"
+|N<BS>|		{count}<BS>	   remove the last digit from {count}
 |CTRL-H|	CTRL-H		1  same as "h"
 |<Tab>|		<Tab>		1  go to N newer entry in jump list
 |CTRL-I|	CTRL-I		1  same as <Tab>

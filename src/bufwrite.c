@@ -2412,7 +2412,7 @@ restore_backup:
 	    STRCAT(IObuff, new_file_message());
 	    c = TRUE;
 	}
-	if (no_eol)
+	if (no_eol && (p_fixeol || !p_eeol))
 	{
 	    msg_add_eol();
 	    c = TRUE;

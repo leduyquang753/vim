@@ -571,6 +571,7 @@ EXTERN int	p_eol;		// 'endofline'
 EXTERN int	p_ek;		// 'esckeys'
 EXTERN char_u	*p_ei;		// 'eventignore'
 EXTERN int	p_et;		// 'expandtab'
+EXTERN int	p_eeol;		// 'expandendofline'
 EXTERN int	p_exrc;		// 'exrc'
 EXTERN char_u	*p_fenc;	// 'fileencoding'
 EXTERN char_u	*p_fencs;	// 'fileencodings'
@@ -704,6 +705,7 @@ EXTERN char_u	*p_isi;		// 'isident'
 EXTERN char_u	*p_isk;		// 'iskeyword'
 EXTERN char_u	*p_isp;		// 'isprint'
 EXTERN int	p_js;		// 'joinspaces'
+EXTERN int	p_kai;		// 'keepautoindent'
 #ifdef FEAT_CRYPT
 EXTERN char_u	*p_key;		// 'key'
 #endif
@@ -782,6 +784,7 @@ EXTERN char_u	*p_mzschemegcdll; // 'mzschemegcdll'
 # endif
 #endif
 EXTERN char_u	*p_nf;		// 'nrformats'
+EXTERN int	p_oc;		// 'opencopy'
 #if defined(MSWIN)
 EXTERN int	p_odev;		// 'opendevice'
 #endif
@@ -1155,6 +1158,7 @@ enum
     , BV_FLP
     , BV_FO
     , BV_FT
+    , BV_KAI
     , BV_IMI
     , BV_IMS
 #if defined(FEAT_EVAL)

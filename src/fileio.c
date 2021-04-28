@@ -2335,9 +2335,11 @@ failed:
 
     // If we get EOF in the middle of a line, note the fact by resetting
     // 'endofline' and add the line normally.
-    if (!error
-	    && !got_int
-	    && linerest != 0)
+    if (
+	!error
+	&& !got_int
+	&& (linerest != 0 || (!p_fixeol && p_eeol))
+    )
     {
 	// remember for when writing
 	if (set_options)
@@ -2508,7 +2510,7 @@ failed:
 		STRCAT(IObuff, shortmess(SHM_RO) ? _("[RO]") : _("[readonly]"));
 		c = TRUE;
 	    }
-	    if (read_no_eol_lnum)
+	    if (read_no_eol_lnum && (p_fixeol || !p_eeol))
 	    {
 		msg_add_eol();
 		c = TRUE;
@@ -3170,10 +3172,10 @@ msg_add_lines(
 	*p++ = ' ';
     if (shortmess(SHM_LINES))
 	vim_snprintf((char *)p, IOSIZE - (p - IObuff),
-		"%ldL, %lldB", lnum, (varnumber_T)nchars);
+		"%ldL; %lldB", lnum, (varnumber_T)nchars);
     else
     {
-	sprintf((char *)p, NGETTEXT("%ld line, ", "%ld lines, ", lnum), lnum);
+	sprintf((char *)p, NGETTEXT("%ld line; ", "%ld lines; ", lnum), lnum);
 	p += STRLEN(p);
 	vim_snprintf((char *)p, IOSIZE - (p - IObuff),
 		NGETTEXT("%lld byte", "%lld bytes", nchars),
