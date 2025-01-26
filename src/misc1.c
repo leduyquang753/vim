@@ -1113,10 +1113,10 @@ msgmore(long n)
     {
 	if (n > 0)
 	    vim_snprintf(msg_buf, MSG_BUF_LEN,
-		    NGETTEXT("%ld more line", "%ld more lines", pn), pn);
+		    NGETTEXT("%ld more line.", "%ld more lines.", pn), pn);
 	else
 	    vim_snprintf(msg_buf, MSG_BUF_LEN,
-		    NGETTEXT("%ld line less", "%ld fewer lines", pn), pn);
+		    NGETTEXT("%ld fewer line.", "%ld fewer lines.", pn), pn);
 	if (got_int)
 	    vim_strcat((char_u *)msg_buf, (char_u *)_(" (Interrupted)"),
 								  MSG_BUF_LEN);

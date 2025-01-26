@@ -1275,7 +1275,7 @@ $(OUTDIR)/vimres.o:	vim.rc vim.manifest version.h gui_w32_rc.h \
 endif
 
 $(OUTDIR):
-	$(MKDIR) $(OUTDIR)
+	if not exist $(OUTDIR) mkdir $(OUTDIR)
 
 $(OUTDIR)/buffer.o: buffer.c $(INCL) version.h
 
@@ -1298,6 +1298,7 @@ $(OUTDIR)/normal.o: normal.c $(INCL) nv_cmdidxs.h nv_cmds.h
 $(OUTDIR)/netbeans.o: netbeans.c $(INCL) version.h
 
 $(OUTDIR)/version.o: version.c $(INCL) version.h
+	$(CC) -c $(CFLAGS) "-DBUILD_DATE=\"$(BUILD_DATE)\"" "-DMODIFIED_BY=\"$(MODIFIED_BY)\"" version.c -o $@
 
 $(OUTDIR)/vim9class.o: vim9class.c $(INCL) vim9.h
 

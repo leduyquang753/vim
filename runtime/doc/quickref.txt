@@ -698,6 +698,7 @@ Short explanation of each option:		*option-list*
 'errorformat'	  'efm'     description of the lines in the error file
 'esckeys'	  'ek'	    recognize function keys in Insert mode
 'eventignore'	  'ei'	    autocommand events that are ignored
+'expandendofline' 'eeol'    expand the final end of line into its own line
 'expandtab'	  'et'	    use spaces when <Tab> is inserted
 'exrc'		  'ex'	    read .vimrc and .exrc in the current directory
 'fileencoding'	  'fenc'    file encoding for multibyte text
@@ -774,6 +775,7 @@ Short explanation of each option:		*option-list*
 'isprint'	  'isp'     printable characters
 'joinspaces'	  'js'	    two spaces after a period with a join command
 'jumpoptions'	  'jop'     specifies how jumping is done
+'keepautoindent'  'kai'     don't remove 'autoindent' when stopping typing
 'key'			    encryption key
 'keymap'	  'kmp'     name of a keyboard mapping
 'keymodel'	  'km'	    enable starting/stopping selection with keys
@@ -830,6 +832,7 @@ Short explanation of each option:		*option-list*
 'number'	  'nu'	    print the line number in front of each line
 'numberwidth'	  'nuw'     number of columns used for the line number
 'omnifunc'	  'ofu'     function for filetype-specific completion
+'opencopy'	  'oc'      repeat input when opening multiple lines
 'opendevice'	  'odev'    allow reading/writing devices on MS-Windows
 'operatorfunc'	  'opfunc'  function to be called for |g@| operator
 'osfiletype'	  'oft'     no longer supported

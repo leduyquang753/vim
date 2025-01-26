@@ -1423,7 +1423,7 @@ do_shell(
 		if (!keep_termcap)
 		    starttermcap();	// don't want a message box here
 #endif
-		msg_puts(_("[No write since last change]\n"));
+		msg_puts(_("[No write since last change.]\n"));
 #ifdef FEAT_GUI_MSWIN
 		if (!keep_termcap)
 		    stoptermcap();
@@ -5065,15 +5065,15 @@ do_sub_msg(
 	    *msg_buf = NUL;
 
 	msg_single = count_only
-		    ? NGETTEXT("%ld match on %ld line",
-					  "%ld matches on %ld line", sub_nsubs)
+		    ? NGETTEXT("%ld match on %ld line.",
+					  "%ld matches on %ld line.", sub_nsubs)
 		    : NGETTEXT("%ld substitution on %ld line",
-				   "%ld substitutions on %ld line", sub_nsubs);
+				   "%ld substitutions on %ld line.", sub_nsubs);
 	msg_plural = count_only
-		    ? NGETTEXT("%ld match on %ld lines",
-					 "%ld matches on %ld lines", sub_nsubs)
-		    : NGETTEXT("%ld substitution on %ld lines",
-				  "%ld substitutions on %ld lines", sub_nsubs);
+		    ? NGETTEXT("%ld match on %ld lines.",
+					 "%ld matches on %ld lines.", sub_nsubs)
+		    : NGETTEXT("%ld substitution on %ld lines.",
+				  "%ld substitutions on %ld lines.", sub_nsubs);
 
 	vim_snprintf_add(msg_buf, sizeof(msg_buf),
 				 NGETTEXT(msg_single, msg_plural, sub_nlines),

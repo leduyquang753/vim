@@ -532,7 +532,7 @@ do_exmode(
     ++hold_gui_events;
 #endif
 
-    msg(_("Entering Ex mode.  Type \"visual\" to go to Normal mode."));
+    msg(_("Entering Ex mode. Type \"visual\" to go to Normal mode."));
     while (exmode_active)
     {
 	// Check for a ":normal" command and no more characters left.

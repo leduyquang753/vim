@@ -227,6 +227,7 @@ $quote	eval.txt	/*$quote*
 'eb'	options.txt	/*'eb'*
 'ed'	options.txt	/*'ed'*
 'edcompatible'	options.txt	/*'edcompatible'*
+'eeol'	options.txt	/*'eeol'*
 'ef'	options.txt	/*'ef'*
 'efm'	options.txt	/*'efm'*
 'ei'	options.txt	/*'ei'*
@@ -249,6 +250,7 @@ $quote	eval.txt	/*$quote*
 'et'	options.txt	/*'et'*
 'eventignore'	options.txt	/*'eventignore'*
 'ex'	options.txt	/*'ex'*
+'expandendofline'	options.ext	/*'expandendofline'*
 'expandtab'	options.txt	/*'expandtab'*
 'exrc'	options.txt	/*'exrc'*
 'fcl'	options.txt	/*'fcl'*
@@ -442,6 +444,8 @@ $quote	eval.txt	/*$quote*
 'jop'	options.txt	/*'jop'*
 'js'	options.txt	/*'js'*
 'jumpoptions'	options.txt	/*'jumpoptions'*
+'kai'	options.txt	/*'kai'*
+'keepautoindent'	options.txt	/*'keepautoindent'*
 'key'	options.txt	/*'key'*
 'keymap'	options.txt	/*'keymap'*
 'keymodel'	options.txt	/*'keymodel'*
@@ -611,6 +615,7 @@ $quote	eval.txt	/*$quote*
 'noeb'	options.txt	/*'noeb'*
 'noed'	options.txt	/*'noed'*
 'noedcompatible'	options.txt	/*'noedcompatible'*
+'noeeol'	options.txt	/*'noeeol'*
 'noek'	options.txt	/*'noek'*
 'noemo'	options.txt	/*'noemo'*
 'noemoji'	options.txt	/*'noemoji'*
@@ -623,6 +628,7 @@ $quote	eval.txt	/*$quote*
 'noesckeys'	options.txt	/*'noesckeys'*
 'noet'	options.txt	/*'noet'*
 'noex'	options.txt	/*'noex'*
+'noexpandendofline'	options.txt	/*'noexpandendofline'*
 'noexpandtab'	options.txt	/*'noexpandtab'*
 'noexrc'	options.txt	/*'noexrc'*
 'nofen'	options.txt	/*'nofen'*
@@ -661,6 +667,8 @@ $quote	eval.txt	/*$quote*
 'nois'	options.txt	/*'nois'*
 'nojoinspaces'	options.txt	/*'nojoinspaces'*
 'nojs'	options.txt	/*'nojs'*
+'nokai'	options.txt	/*'nokai'*
+'nokeepautoindent'	options.txt	/*'nokeepautoindent'*
 'nolangnoremap'	options.txt	/*'nolangnoremap'*
 'nolangremap'	options.txt	/*'nolangremap'*
 'nolazyredraw'	options.txt	/*'nolazyredraw'*
@@ -692,7 +700,9 @@ $quote	eval.txt	/*$quote*
 'nomousemoveevent'	options.txt	/*'nomousemoveevent'*
 'nonu'	options.txt	/*'nonu'*
 'nonumber'	options.txt	/*'nonumber'*
+'nooc'	options.txt	/*'nooc'*
 'noodev'	options.txt	/*'noodev'*
+'noopencopy'	options.txt	/*'noopencopy'*
 'noopendevice'	options.txt	/*'noopendevice'*
 'nopaste'	options.txt	/*'nopaste'*
 'nopi'	options.txt	/*'nopi'*
@@ -806,12 +816,14 @@ $quote	eval.txt	/*$quote*
 'number'	options.txt	/*'number'*
 'numberwidth'	options.txt	/*'numberwidth'*
 'nuw'	options.txt	/*'nuw'*
+'oc'	options.txt	/*'oc'*
 'odev'	options.txt	/*'odev'*
 'oft'	options.txt	/*'oft'*
 'ofu'	options.txt	/*'ofu'*
 'omnifunc'	options.txt	/*'omnifunc'*
 'op'	vi_diff.txt	/*'op'*
 'open'	vi_diff.txt	/*'open'*
+'opencopy'	options.txt	/*'opencopy'*
 'opendevice'	options.txt	/*'opendevice'*
 'operatorfunc'	options.txt	/*'operatorfunc'*
 'opfunc'	options.txt	/*'opfunc'*
@@ -5606,6 +5618,7 @@ MzScheme	if_mzsch.txt	/*MzScheme*
 N	pattern.txt	/*N*
 N%	motion.txt	/*N%*
 N:	cmdline.txt	/*N:*
+N<BS>	various.txt	/*N<BS>*
 N<Del>	various.txt	/*N<Del>*
 NFA	pattern.txt	/*NFA*
 NL-used-for-Nul	pattern.txt	/*NL-used-for-Nul*

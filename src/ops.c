@@ -194,13 +194,13 @@ op_shift(oparg_T *oap, int curs_top, int amount)
 	char	    *msg_line_plural;
 
 	if (oap->op_type == OP_RSHIFT)
-	    op = ">";
+	    op = "indented";
 	else
-	    op = "<";
-	msg_line_single = NGETTEXT("%ld line %sed %d time",
-					     "%ld line %sed %d times", amount);
-	msg_line_plural = NGETTEXT("%ld lines %sed %d time",
-					    "%ld lines %sed %d times", amount);
+	    op = "unindented";
+	msg_line_single = NGETTEXT("%ld line %s %d time.",
+					     "%ld line %s %d times.", amount);
+	msg_line_plural = NGETTEXT("%ld lines %s %d time.",
+					    "%ld lines %s %d times.", amount);
 	vim_snprintf((char *)IObuff, IOSIZE,
 		NGETTEXT(msg_line_single, msg_line_plural, oap->line_count),
 		oap->line_count, op, amount);
@@ -908,7 +908,7 @@ op_delete(oparg_T *oap)
 	    int msg_silent_save = msg_silent;
 
 	    msg_silent = 0;	// must display the prompt
-	    n = ask_yesno((char_u *)_("cannot yank; delete anyway"), TRUE);
+	    n = ask_yesno((char_u *)_("Cannot yank; delete anyway"), TRUE);
 	    msg_silent = msg_silent_save;
 	    if (n != 'y')
 	    {

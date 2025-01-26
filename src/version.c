@@ -2824,6 +2824,7 @@ static int included_patches[] =
 static char *(extra_patches[]) =
 {   /* Add your patch description below this line */
 /**/
+    "Custom feature modifications",
     NULL
 };
 
@@ -3156,7 +3157,7 @@ list_version(void)
 #elif defined(MSWIN)
     msg_puts(_("with GUI."));
 #endif
-    version_msg(_("  Features included (+) or not (-):\n"));
+    version_msg(_(" Features included (+) or not (-):\n"));
 
     list_features();
     if (msg_col > 0)

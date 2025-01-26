@@ -3277,6 +3277,15 @@ A jump table for the options with a short description can be found at |Q_op|.
 	Otherwise this is a comma-separated list of event names.  Example: >
 	    :set ei=WinEnter,WinLeave
 <
+
+               *'expandendofline'*  *'eeol'* *'noexpandendofline'* *'noeeol'*
+'expandendofline' 'eeol'
+			boolean (default off)
+			global
+	If 'fixendofline' is off and this is on, when opening a file, the
+	final newline character will be expanded into its own line and
+	'endofline' will be set to off.
+
 				 *'expandtab'* *'et'* *'noexpandtab'* *'noet'*
 'expandtab' 'et'	boolean	(default off)
 			local to buffer
@@ -5031,6 +5040,12 @@ A jump table for the options with a short description can be found at |Q_op|.
 			when navigating backwards in the jumplist and then
 			jumping to a location.  |jumplist-stack|
 
+                     *'keepautoindent'* *'kai'* *'nokeepautoindent'* *'nokai'*
+'keepautoindent' 'kai'	boolean (default off)
+			local to buffer
+	When exiting from |insert| mode right after 'autoindent'ing, the
+	automatic indentation won't be removed.
+
 							*'key'*
 'key'			string	(default "")
 			local to buffer
@@ -6095,6 +6110,16 @@ A jump table for the options with a short description can be found at |Q_op|.
 	|:filetype-plugin-on|
 	This option cannot be set from a |modeline| or in the |sandbox|, for
 	security reasons.
+
+                                   *'opencopy'* *'oc'* *'noopencopy'* *'nooc'*
+'opencopy' 'oc'		boolean (default off)
+			global
+	When opening a line (|O| or |o|):
+	- off: A number of empty lines equal to the |count| is inserted
+	  following the direction and the mode switches to |INSERT|.
+	- on: A single line is inserted following the direction, the mode
+	  switches to |INSERT|, after done (|<Esc>|), the insertion repeats a
+	  number of times equal to the |count|.
 
 			    *'opendevice'* *'odev'* *'noopendevice'* *'noodev'*
 'opendevice' 'odev'	boolean	(default off)

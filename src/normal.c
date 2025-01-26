@@ -1097,7 +1097,7 @@ check_visual_highlight(void)
     if (full_screen)
     {
 	if (!did_check && HL_ATTR(HLF_V) == 0)
-	    msg(_("Warning: terminal cannot highlight"));
+	    msg(_("Warning: terminal cannot highlight."));
 	did_check = TRUE;
     }
 }
@@ -1643,7 +1643,7 @@ clear_showcmd(void)
 	    p_sbr = saved_sbr;
 	    curwin->w_p_sbr = saved_w_sbr;
 # endif
-	    sprintf((char *)showcmd_buf, "%ldx%ld", lines,
+	    sprintf((char *)showcmd_buf, "%ld.%ld", lines,
 					      (long)(rightcol - leftcol + 1));
 	}
 	else if (VIsual_mode == 'V' || VIsual.lnum != curwin->w_cursor.lnum)
@@ -6317,23 +6317,49 @@ n_opencmd(cmdarg_T *cap)
 		(linenr_T)(curwin->w_cursor.lnum +
 		    (cap->cmdchar == 'o' ? 1 : 0))
 	      ) == OK
-	    && open_line(cap->cmdchar == 'O' ? BACKWARD : FORWARD,
+    ) {
+	int openOK = TRUE;
+	int backward = cap->cmdchar == 'O';
+	if (p_oc) { // Opening repeats inserting after done.
+	    openOK = open_line(
+		backward ? BACKWARD : FORWARD,
 		has_format_option(FO_OPEN_COMS) ? OPENLINE_DO_COM : 0,
-		0, NULL) == OK)
-    {
+		0, NULL
+	    ) == OK;
+	} else {
+	    for (int i = 0; i != cap->count1; ++i) {
+		if (open_line(
+		    backward ? BACKWARD : FORWARD,
+		    has_format_option(FO_OPEN_COMS) ? OPENLINE_DO_COM : 0,
+		    0, NULL
+		) != OK) {
+		    openOK = FALSE;
+		    break;
+		}
+	    }
+
+	    // Clear any automatic indentation on intermediate lines.
+	    int currentLine = curwin->w_cursor.lnum;
+	    for (int i = 1; i != cap->count1; ++i)
+		ml_replace(currentLine + (backward ? i : -i), (const char_u*)"", TRUE);
+
+	    cap->count1 = 1;
+	}
+	if (openOK) {
 #ifdef FEAT_CONCEAL
-	if (curwin->w_p_cole > 0 && oldline != curwin->w_cursor.lnum)
-	    redrawWinline(curwin, oldline);
+	    if (curwin->w_p_cole > 0 && oldline != curwin->w_cursor.lnum)
+		redrawWinline(curwin, oldline);
 #endif
 #ifdef FEAT_SYN_HL
-	if (curwin->w_p_cul)
-	    // force redraw of cursorline
-	    curwin->w_valid &= ~VALID_CROW;
+	    if (curwin->w_p_cul)
+		// force redraw of cursorline
+		curwin->w_valid &= ~VALID_CROW;
 #endif
-	// When '#' is in 'cpoptions' ignore the count.
-	if (vim_strchr(p_cpo, CPO_HASH) != NULL)
-	    cap->count1 = 1;
-	invoke_edit(cap, FALSE, cap->cmdchar, TRUE);
+	    // When '#' is in 'cpoptions' ignore the count.
+	    if (vim_strchr(p_cpo, CPO_HASH) != NULL)
+		cap->count1 = 1;
+	    invoke_edit(cap, FALSE, cap->cmdchar, TRUE);
+	}
     }
 }
 
@@ -6856,7 +6882,7 @@ nv_esc(cmdarg_T *cap)
 	    // message on stderr.  Without any changes might as well exit.
 	    if (anyBufIsChanged())
 	    {
-		char *ms = _("Type  :qa!  and press <Enter> to abandon all changes and exit Vim");
+		char *ms = _("Type  :qa!  and press <Enter> to abandon all changes and exit Vim.");
 
 		if (out_redir)
 		    mch_errmsg(ms);
@@ -6871,7 +6897,7 @@ nv_esc(cmdarg_T *cap)
 		    do_cmdline_cmd((char_u *)"qa");
 		}
 		else
-		    msg(_("Type  :qa  and press <Enter> to exit Vim"));
+		    msg(_("Type  :qa  and press <Enter> to exit Vim."));
 	    }
 	}
 

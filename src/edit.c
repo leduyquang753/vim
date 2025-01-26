@@ -2510,7 +2510,7 @@ stop_insert(
 	// Do this when ESC was used or moving the cursor up/down.
 	// Check for the old position still being valid, just in case the text
 	// got changed unexpectedly.
-	if (!nomove && did_ai && (esc || (vim_strchr(p_cpo, CPO_INDENT) == NULL
+	if (!curbuf->b_p_kai && !nomove && did_ai && (esc || (vim_strchr(p_cpo, CPO_INDENT) == NULL
 			&& curwin->w_cursor.lnum != end_insert_pos->lnum))
 		&& end_insert_pos->lnum <= curbuf->b_ml.ml_line_count)
 	{

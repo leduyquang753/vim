@@ -1956,13 +1956,15 @@ gi			Insert text in the same position as where Insert mode
 
 							*o*
 o			Begin a new line below the cursor and insert text,
-			repeat [count] times.
+			adding blank lines or repeat [count] times depending
+			on 'opencopy'.
 			When the '#' flag is in 'cpoptions' the count is
 			ignored.
 
 							*O*
 O			Begin a new line above the cursor and insert text,
-			repeat [count] times.
+			adding blank lines or repeat [count] times depending
+			on 'opencopy'.
 			When the '#' flag is in 'cpoptions' the count is
 			ignored.
 

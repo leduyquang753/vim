@@ -37,6 +37,7 @@ src/auto/pathdef.c
 *.RES
 vim*.dll
 vim*.lib
+runtime/winpty.dll
 src/dobj*/pathdef.c
 src/gobj*/pathdef.c
 src/obj*/pathdef.c

@@ -1351,14 +1351,14 @@ op_yank(oparg_T *oap, int deleting, int mess)
 	    update_topline_redraw();
 	    if (oap->block_mode)
 	    {
-		smsg(NGETTEXT("block of %ld line yanked%s",
-				     "block of %ld lines yanked%s", yanklines),
+		smsg(NGETTEXT("Block of %ld line yanked%s.",
+				     "Block of %ld lines yanked%s.", yanklines),
 			yanklines, namebuf);
 	    }
 	    else
 	    {
 		smsg(NGETTEXT("%ld line yanked%s",
-					      "%ld lines yanked%s", yanklines),
+					      "%ld lines yanked%s.", yanklines),
 			yanklines, namebuf);
 	    }
 	}

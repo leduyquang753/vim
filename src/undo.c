@@ -1583,7 +1583,7 @@ u_write_undo(
 	    {
 		verbose_enter();
 		smsg(
-		   _("Cannot write undo file in any directory in 'undodir'"));
+		   _("Cannot write undo file in any directory in 'undodir'."));
 		verbose_leave();
 	    }
 	    return;
@@ -1670,7 +1670,7 @@ u_write_undo(
     if (buf->b_u_numhead == 0 && buf->b_u_line_ptr.ul_line == NULL)
     {
 	if (p_verbose > 0)
-	    verb_msg(_("Skipping undo file write, nothing to undo"));
+	    verb_msg(_("Skipping undo file write, nothing to undo."));
 	goto theend;
     }
 
@@ -1971,7 +1971,7 @@ u_read_undo(char_u *name, char_u *hash, char_u *orig_name UNUSED)
 	    if (name == NULL)
 		verbose_enter();
 	    give_warning((char_u *)
-		      _("File contents changed, cannot use undo info"), TRUE);
+		      _("File contents changed, cannot use undo info."), TRUE);
 	    if (name == NULL)
 		verbose_leave();
 	}
@@ -2266,7 +2266,7 @@ u_doit(int startcount)
 		beep_flush();
 		if (count == startcount - 1)
 		{
-		    msg(_("Already at oldest change"));
+		    msg(_("Already at oldest change."));
 		    return;
 		}
 		break;
@@ -2281,7 +2281,7 @@ u_doit(int startcount)
 		beep_flush();	// nothing to redo
 		if (count == startcount - 1)
 		{
-		    msg(_("Already at newest change"));
+		    msg(_("Already at newest change."));
 		    return;
 		}
 		break;
@@ -2535,9 +2535,9 @@ undo_time(
 	if (closest == closest_start)
 	{
 	    if (step < 0)
-		msg(_("Already at oldest change"));
+		msg(_("Already at oldest change."));
 	    else
-		msg(_("Already at newest change"));
+		msg(_("Already at newest change."));
 	    return;
 	}
 
@@ -3010,7 +3010,7 @@ u_undo_end(
     else if (u_oldcount < 0)
 	msgstr = N_("more lines");
     else if (u_oldcount == 1)
-	msgstr = N_("line less");
+	msgstr = N_("fewer line");
     else if (u_oldcount > 1)
 	msgstr = N_("fewer lines");
     else
@@ -3175,7 +3175,7 @@ ex_undolist(exarg_T *eap UNUSED)
     }
 
     if (ga.ga_len == 0)
-	msg(_("Nothing to undo"));
+	msg(_("Nothing to undo."));
     else
     {
 	int		i;

@@ -3572,7 +3572,7 @@ objects/userfunc.o: userfunc.c
 	$(CCC) -o $@ userfunc.c
 
 objects/version.o: version.c
-	$(CCC) -o $@ version.c
+	$(CCC) version.c "-DBUILD_DATE=\"$(BUILD_DATE)\"" "-DMODIFIED_BY=\"$(MODIFIED_BY)\"" -o $@
 
 objects/vim9class.o: vim9class.c
 	$(CCC) -o $@ vim9class.c

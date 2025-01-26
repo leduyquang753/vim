@@ -56,7 +56,7 @@ static void fuzzy_match_func_sort(fuzmatch_str_T *fm, int sz);
 static int fuzzy_match_str_in_line(char_u **ptr, char_u *pat, int *len, pos_T *current_pos);
 
 #define SEARCH_STAT_DEF_TIMEOUT 40L
-#define SEARCH_STAT_DEF_MAX_COUNT 99
+#define SEARCH_STAT_DEF_MAX_COUNT 999
 #define SEARCH_STAT_BUF_LEN 12
 
 /*

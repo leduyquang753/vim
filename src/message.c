@@ -1202,7 +1202,7 @@ ex_messages(exarg_T *eap)
 	    msg_attr(
 		    // Translator: Please replace the name and email address
 		    // with the appropriate text for your translation.
-		    _("Messages maintainer: The Vim Project"),
+		    _("Previous messages:"),
 		    HL_ATTR(HLF_T));
     }
 
@@ -1503,7 +1503,7 @@ hit_return_msg(void)
     if (got_int)
 	msg_puts(_("Interrupt: "));
 
-    msg_puts_attr(_("Press ENTER or type command to continue"), HL_ATTR(HLF_R));
+    msg_puts_attr(_("Press Enter or type command to continue."), HL_ATTR(HLF_R));
     if (!msg_use_printf())
 	msg_clr_eos();
     p_more = save_p_more;

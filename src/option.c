@@ -6728,6 +6728,7 @@ get_varp(struct vimoption *p)
 #ifdef FEAT_EVAL
 	case PV_FEX:	return (char_u *)&(curbuf->b_p_fex);
 #endif
+	case PV_KAI:	return (char_u *)&(curbuf->b_p_kai);
 #ifdef FEAT_CRYPT
 	case PV_KEY:	return (char_u *)&(curbuf->b_p_key);
 #endif
@@ -7194,6 +7195,7 @@ buf_copy_options(buf_T *buf, int flags)
 	    buf->b_p_ai = p_ai;
 	    COPY_OPT_SCTX(buf, BV_AI);
 	    buf->b_p_ai_nopaste = p_ai_nopaste;
+	    buf->b_p_kai = p_kai;
 	    buf->b_p_sw = p_sw;
 	    COPY_OPT_SCTX(buf, BV_SW);
 	    buf->b_p_tw = p_tw;

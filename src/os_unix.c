@@ -4887,9 +4887,9 @@ mch_call_shell_system(
 	msg_puts(_("\nCannot execute shell sh\n"));
     else if (x && !(options & SHELL_SILENT))
     {
-	msg_puts(_("\nshell returned "));
+	msg_puts(_("\nShell returned "));
 	msg_outnum((long)x);
-	msg_putchar('\n');
+	msg_puts(".\n");
     }
 
     if (tmode == TMODE_RAW)
@@ -5722,14 +5722,14 @@ finished:
 		    }
 		    else if (!(options & SHELL_SILENT))
 		    {
-			msg_puts(_("\nshell returned "));
+			msg_puts(_("\nShell returned "));
 			msg_outnum((long)retval);
-			msg_putchar('\n');
+			msg_puts(".\n");
 		    }
 		}
 	    }
 	    else
-		msg_puts(_("\nCommand terminated\n"));
+		msg_puts(_("\nCommand terminated.\n"));
 	}
     }
 
