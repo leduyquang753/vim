@@ -1,0 +1,1 @@
+make "BUILD_DATE=$(date -u '+%-Hh%M:%S %-d/%-m/%Y UTC')" "COMPILEDBY=leduyquang753@gmail.com" "MODIFIED_BY=Le Duy Quang" -j 4

@@ -139,7 +139,7 @@ ex_help(exarg_T *eap)
 	    // Try to open the file specified by the "helpfile" option.
 	    if ((helpfd = mch_fopen((char *)p_hf, READBIN)) == NULL)
 	    {
-		smsg(_("Sorry, help file \"%s\" not found"), p_hf);
+		smsg(_("Help file \"%s\" not found."), p_hf);
 		goto erret;
 	    }
 	    fclose(helpfd);
