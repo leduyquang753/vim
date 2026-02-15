@@ -68,8 +68,8 @@ static int	do_buffer_ext(int action, int start, int dir, int count, int flags);
     for ((buf) = lastbuf; (buf) != NULL; (buf) = (buf)->b_prev)
 
 #if defined(FEAT_QUICKFIX)
-static char *msg_loclist = N_("[Location List]");
-static char *msg_qflist = N_("[Quickfix List]");
+static char *msg_loclist = N_("[Location list]");
+static char *msg_qflist = N_("[Quickfix list]");
 #endif
 
 // Number of times free_buffer() was called.
@@ -2354,7 +2354,7 @@ buflist_new(
 	    buf->b_fnum = top_file_num++;
 	if (top_file_num < 0)		// wrap around (may cause duplicates)
 	{
-	    emsg(_("W14: Warning: List of file names overflow"));
+	    emsg(_("W14: Warning: List of file names overflow."));
 	    if (emsg_silent == 0 && !in_assert_fails)
 	    {
 		out_flush();
@@ -4109,7 +4109,7 @@ maketitle(void)
 	    // file name
 	    if (curbuf->b_fname == NULL)
 		buflen = vim_snprintf_safelen((char *)buf,
-		    SPACE_FOR_FNAME, "%s", _("[No Name]"));
+		    SPACE_FOR_FNAME, "%s", _("[No name.]"));
 #ifdef FEAT_TERMINAL
 	    else if (curbuf->b_term != NULL)
 		buflen = vim_snprintf_safelen((char *)buf,
@@ -6479,7 +6479,7 @@ buf_spname(buf_T *buf)
 buf_get_fname(buf_T *buf)
 {
     if (buf->b_fname == NULL)
-	return (char_u *)_("[No Name]");
+	return (char_u *)_("[No name.]");
     return buf->b_fname;
 }
 
