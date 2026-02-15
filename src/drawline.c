@@ -1451,6 +1451,7 @@ win_line(
 		}
 	    }
 
+/* Disabled code.
 	    // Check if the character under the cursor should not be inverted
 	    if (!highlight_match && in_curline
 #ifdef FEAT_GUI
@@ -1458,6 +1459,7 @@ win_line(
 #endif
 		    )
 		noinvcur = TRUE;
+*/
 
 	    // if inverting in this line set area_highlighting
 	    if (wlv.fromcol >= 0)
