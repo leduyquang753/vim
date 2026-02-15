@@ -2318,7 +2318,7 @@ swapfile_info(char_u *fname)
 	    {
 		msg_puts(_("         file name: "));
 		if (b0.b0_fname[0] == NUL)
-		    msg_puts(_("[No Name]"));
+		    msg_puts(_("[No name.]"));
 		else
 		    msg_outtrans(b0.b0_fname);
 
